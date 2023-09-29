@@ -8,7 +8,7 @@ import { ICategoryModel } from '../../../domain/models/category/category.models'
   providedIn: 'root'
 })
 export class CategoryService extends CategoryGateway {
-  private CATEGORY_URL_BASE: string = 'http://localhost:3030/api/category/';
+  private CATEGORY_URL_BASE: string = `app_7f379359-3c4c-41b1-bbcc-0b79ad222550/api/category/`; 
 
   private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
