@@ -1,0 +1,18 @@
+<div class="home-container">
+  <app-title></app-title>
+  <div class="flex-1 p-4">
+    <div class="grid grid-cols-3 gap-10">
+      <div *ngFor="let product of products">
+        <app-card [product]="product" (editProductClicked)="openModal($event)"></app-card>
+      </div>
+    </div>
+    <div *ngIf="isModalOpen">
+      <app-modal-product [product]="selectedProduct" (closeModalEvent)="closeModal()"></app-modal-product>
+    </div>
+    <app-home-pagination
+      [paginationSetup]="paginationSetup"
+      (nextPageClicked)="handleNextPageClick($event)"
+      (previousPageClicked)="handlePreviousPageClick($event)">
+    </app-home-pagination>
+  </div>
+</div>

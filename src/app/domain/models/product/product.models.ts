@@ -1,18 +1,30 @@
-export interface IProductModel {
+export interface IProductModel{
     _id: string;
     PRODUCT_NAME: string;
-    PRODUCT: string;
+    PRODUCT_DESCRIPTION: string;
     PRODUCT_SKU: string;
     PRODUCT_IMAGE: string;
     PRODUCT_CATEGORIES: string[];
     PRODUCT_PRICE: number;
     PRODUCT_STOCK_QTY: number;
 }
+export interface IProductModeltoUpdate {
+    PRODUCT_NAME: string;
+    PRODUCT_DESCRIPTION: string;
+    PRODUCT_SKU: string;
+    PRODUCT_IMAGE: string;
+    PRODUCT_CATEGORIES_ID: string[];
+    PRODUCT_PRICE: number;
+    PRODUCT_STOCK_QTY: number;
+}
 
-export interface IPaginationProductModel {
+export interface IPaginationProductModel extends IPaginationSetup {
     products: IProductModel[];
-    page: number;
-    pageSize: number;
-    totalPages: number;
-    totalProducts: number;
+}
+
+export interface IPaginationSetup {
+    page : number;
+    totalPages : number;
+    totalProducts : number;
+    pageSize : number;
 }

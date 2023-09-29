@@ -1,0 +1,9 @@
+/* Estilo para la tarjeta cuando el mouse está sobre ella */
+.mx-auto:hover .h-48 {
+    filter: blur(5px); /* Aplicar un filtro de desenfoque */
+  }
+  
+  /* Estilo para mostrar el botón de "Editar" cuando el mouse está sobre la tarjeta */
+  .mx-auto:hover button {
+    display: block;
+  }

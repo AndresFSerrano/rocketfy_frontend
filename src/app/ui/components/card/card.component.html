@@ -1,0 +1,29 @@
+<div class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg" *ngIf="product" style="height: 500px;">
+  <img class="h-48 w-full object-cover object-center" [src]="product.PRODUCT_IMAGE" alt="Imagen del producto" />
+  <div class="p-4">
+    <h2 class="mb-2 text-lg font-medium dark:text-white text-gray-900">
+      {{ product.PRODUCT_NAME }}
+    </h2>
+    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">
+      {{ product.PRODUCT_DESCRIPTION }}
+    </p>
+    <div class="mb-2 text-base dark:text-gray-300 text-gray-700">
+      <strong>Categorías:</strong>
+      {{ product.PRODUCT_CATEGORIES.join(', ') }}
+    </div>
+    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">
+      <strong>SKU:</strong>
+      {{ product.PRODUCT_SKU }}
+    </p>
+    <div class="flex items-center">
+      <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">$
+        {{ product.PRODUCT_PRICE }}
+      </p>
+    </div>
+    <p class="mt-2 text-base font-medium text-gray-500 dark:text-gray-300">
+      <strong>Stock:</strong>
+      {{ product.PRODUCT_STOCK_QTY }}
+    </p>
+        <button (click)="onEditClick()" class="hidden absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-blue-900 text-white text-sm rounded-full opacity-0 transition-opacity duration-300 hover:opacity-100">Editar</button>
+  </div>
+</div>

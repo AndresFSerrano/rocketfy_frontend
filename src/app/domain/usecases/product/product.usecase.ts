@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { ProductGateway } from "../../models/product/gateway/product.gateway";
-import { IProductModel, IPaginationProductModel } from "../../models/product/product.models";
+import { IProductModel, IPaginationProductModel, IProductModeltoUpdate } from "../../models/product/product.models";
 import { catchError } from 'rxjs/operators'
 
 @Injectable()
@@ -32,7 +32,7 @@ export class ProductUseCase {
         );
     }
 
-    editProductById(id: string, updatedProductData: any): Observable<IProductModel> {
+    editProductById(id: string, updatedProductData: IProductModeltoUpdate): Observable<IProductModel> {
         return this.productGateway.editProductById(id, updatedProductData).pipe(
             catchError((err) => {
                 return of(err.error);

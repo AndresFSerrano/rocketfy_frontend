@@ -1,0 +1,52 @@
+<div class="fixed inset-0 flex items-center justify-center z-50">
+
+  <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
+  <div class="modal-container bg-gray-900 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+    <div class="modal-content py-4 text-left px-6">
+      <h1 class="text-2xl font-semibold text-white">Editar Producto</h1>
+      <div class="mt-4">
+        <label class="text-gray-300">Nombre del Producto</label>
+        <input type="text" class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_NAME" [value]="product.PRODUCT_NAME">
+      </div>
+
+      <div class="mt-4">
+        <label class="text-gray-300">SKU del Producto</label>
+        <input class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_SKU" [value]="product.PRODUCT_SKU">
+      </div>
+
+      <div class="mt-4">
+        <label class="text-gray-300">Imagen del Producto</label>
+        <input class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_IMAGE" [value]="product.PRODUCT_IMAGE">
+      </div>
+
+      <div class="mt-4">
+        <label class="text-gray-300">Categorías del Producto</label>
+        <div *ngFor="let category of categories">
+          <input type="checkbox" [value]="category._id" (change)="toggleCategory(category._id)" [checked]="isSelected(category._id)">
+          <label class="text-gray-300"> {{ category.CATEGORY_NAME }}</label>
+        </div>
+      </div>
+    
+      <div class="mt-4">
+        <label class="text-gray-300">Precio del Producto</label>
+        <input type="number" step="0.01" class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_PRICE" [value]="product.PRODUCT_PRICE">
+      </div>
+
+      <div class="mt-4">
+        <label class="text-gray-300">Cantidad en Stock</label>
+        <input type="number" class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_STOCK_QTY" [value]="product.PRODUCT_STOCK_QTY">
+      </div>
+
+      <div class="mt-4">
+        <label class="text-gray-300">Descripción del Producto</label>
+        <textarea class="w-full bg-gray-700 text-white rounded mt-2 p-2" formControlName="PRODUCT_DESCRIPTION" [value]="product.PRODUCT_DESCRIPTION"></textarea>
+      </div>
+      <form [formGroup]="editForm">
+        <div class="mt-6">
+          <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Guardar Cambios</button>
+          <button (click)="closeModal()" class="ml-4 bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
