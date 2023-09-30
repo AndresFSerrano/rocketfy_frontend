@@ -8,7 +8,7 @@ import { IPaginationProductModel, IProductModel } from 'src/app/domain/models/pr
   providedIn: 'root'
 })
 export class ProductService extends ProductGateway {
-  private PRODUCT_URL_BASE: string = 'http://app_7f379359-3c4c-41b1-bbcc-0b79ad222550/api/product/';
+  private PRODUCT_URL_BASE: string = 'https://app-7f379359-3c4c-41b1-bbcc-0b79ad222550.cleverapps.io/api/product/';
 
   private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
